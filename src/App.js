@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import { subscribeToTimer } from './api';
-import Board from './components/Board'
+import Board from './components/Board';
+import Stream from './components/orderStream';
 
 class App extends Component {
   constructor(props) {
@@ -12,13 +12,15 @@ class App extends Component {
     }));
   }
   state = {
-    Order: 'no timestamp yet'
+    Order: 'no orders yet'
   };
   render() {
     return (
       <div className="App">
-        This is the Current Order: {this.state.Order.name}
-        this is the Current Status: {this.state.Order.event_name}
+        <Stream
+          OrderName = {this.state.Order.name}
+          OrderEvent = {this.state.Order.event_name}
+        />
         <Board 
           OrderID = {this.state.Order.id}
           OrderName = {this.state.Order.name}
