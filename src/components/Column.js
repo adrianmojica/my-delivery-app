@@ -8,9 +8,19 @@ class Column extends Component {
   render() {
       return (<div className="column- col">
             <div className={`title ${this.props.title}`}>{this.props.title}</div>
-              <Card
+              <Card 
+                
                
               />
+              <Card
+               
+               />
+               <Card
+               
+               />
+               <Card
+               
+               />
             </div>)
   };
 }
