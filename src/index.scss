@@ -26,8 +26,30 @@ code {
 }
 
 .col {
-  background: blue;
   padding: 20px;
+  .title{
+    text-align: center;
+    color: #fff;
+    padding-top:10px;
+    border-top-right-radius: 15px;
+    height: 120px;
+    &.Created{
+      background-color:#056CF2;
+    }
+    &.Cooked {
+      background-color:#1B8EF2;
+     
+    }
+    &.Cancelled {
+      background-color:#F2911B;
+    }
+    &.Driver {
+      background-color:#F2811D;
+    }
+    &.Delivered {
+      background-color:#F24405;
+    }
+  }
 }
 
 .main-board {
@@ -37,6 +59,7 @@ code {
 .order-card{
   background: #eee;
   padding: 10px;
-  border-radius: 3px;
   margin: 5px;
+  border-radius: 3px 3px 0px 0px;
+  margin-top: -80px;
 }

@@ -2,14 +2,17 @@ import React, { Component } from 'react'
 import Card from '../components/Card'
 
 
-export default class Column extends Component {
+
+class Column extends Component {
+  
   render() {
-      return <div className="column- col">
-            <div>Title</div>
-              <Card/>
-              <Card/>
-              <Card/>
-            </div>
-     
-  }
+      return (<div className="column- col">
+            <div className={`title ${this.props.title}`}>{this.props.title}</div>
+              <Card
+               
+              />
+            </div>)
+  };
 }
+
+export default Column;
