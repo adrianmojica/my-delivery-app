@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.flex-grid {
+  display: flex;
+  
+}
+.flex-grid .col {
+  flex: 1;
+  margin: 0 0 20px 0;
+}
+
+.col {
+  background: blue;
+  padding: 20px;
+}
+
+.main-board {
+  height: 100vh;
+}
+
+.order-card{
+  background: #eee;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 5px;
+}
