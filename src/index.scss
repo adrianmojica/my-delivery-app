@@ -53,7 +53,8 @@ code {
 }
 
 .main-board {
-  height: 100vh;
+  height: 800px;
+  overflow-y: scroll;
 }
 
 .order-card{
@@ -111,6 +112,56 @@ code {
 .cell-centered {
   text-align: center;
 }
+
+.filters{
+  display:block;
+  div{
+    display: inline-block;
+    button {
+      border-radius:28px;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:17px;
+      padding:6px 9px;
+      margin-right: 10px;
+      text-decoration:none;
+    }
+    .created:hover {
+      background-color:#056cf2;
+    }
+    .created:active {
+      position:relative;
+      top:1px;
+    }
+    .created{
+      background-color: #056cf2;
+      background-color: #056cf2;
+      text-shadow:0px 1px 0px #056cf2;
+    }
+    .history {
+      background-color: #F24405;
+      background-color: #F24405;
+      text-shadow:0px 1px 0px #F24405;
+    }
+    .cooked{
+      background-color: #F2911B;
+      background-color: #F2911B;
+      text-shadow:0px 1px 0px #F2911B;
+    }
+  }
+  
+}
+
+.hidden {
+  display:none;
+}
+.show {
+  display:block;
+}
+
+
 .CREATED {
   background-color: #056CF2;
   border-radius: 6px;

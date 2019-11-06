@@ -8,7 +8,6 @@ class orderStream extends Component {
             <div className="logo">
             <img src={logo} className="App-logo" alt="logo" />
             </div>
-            
         </div>
         )
     };
