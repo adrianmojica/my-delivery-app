@@ -78,3 +78,92 @@ code {
   margin-left: 20px;
 }
    
+#resp-table {
+  width: 100%;
+  display: table;
+}
+
+#resp-table-header{
+  display: table-header-group;
+  font-size: 18px;
+}
+
+.table-header-cell{
+  display: table-cell;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+#resp-table-body{
+  display: table-row-group;
+}
+
+.resp-table-row{
+  display: table-row;
+}
+
+.table-body-cell{
+  padding-top: 10px;
+  display: table-cell;
+}
+
+.cell-centered {
+  text-align: center;
+}
+.CREATED {
+  background-color: #056CF2;
+  border-radius: 6px;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 10px;
+  color: white;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+.COOKED {
+  background-color: #F2911B;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+.CANCELLED {
+  background-color: #F24405;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+.DRIVER_RECEIVED {
+  background-color: rgb(236, 187, 126);
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+
+.DELIVERED {
+  background-color: rgb(128, 37, 5);
+  border-radius: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+
+

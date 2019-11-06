@@ -7,26 +7,21 @@ import Stream from './components/orderStream';
 class App extends Component {
   constructor(props) {
     super(props);
-    subscribeToTimer((err, Order) => this.setState({ 
-      Order 
-    }));
+    subscribeToTimer((err, Order) => this.setState(state => ({
+      Orders: [...state.Orders, Order] 
+    })));
   }
   state = {
-    Order: 'no orders yet'
+    Orders: []
   };
   render() {
+    const { Orders } = this.state;
+    const { name, event_name } = Orders[Orders.length - 1] || {}; // get the names from the laster order - or undefined if none
     return (
       <div className="App">
-        <Stream
-          OrderName = {this.state.Order.name}
-          OrderEvent = {this.state.Order.event_name}
-        />
+        <Stream/>
         <Board 
-          OrderID = {this.state.Order.id}
-          OrderName = {this.state.Order.name}
-          OrderEvent = {this.state.Order.event_name}
-          OrderTime = {this.state.Order.sent_at_second}
-          OrderDest = {this.state.Order.destination}
+         Orders = {this.state.Orders}
         />
         
       </div>  
