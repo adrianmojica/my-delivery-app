@@ -5,21 +5,22 @@ import Board from './components/Board';
 import Stream from './components/orderStream';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    subscribeToTimer((err, Order) => this.setState(state => ({
-      Orders: [...state.Orders, Order] 
-    })));
-  }
+  
+
+  componentDidMount() {
+    subscribeToTimer((err, Order) => this.setState(
+   state => ({
+   Orders: [...state.Orders, Order] ,
+   OrdersCr: [...state.OrdersCr, Order] ,
+   OrdersCo: [...state.OrdersCo, Order] ,
+   })));
+ }
 
   showBoard(board){
     let a = document.getElementsByClassName('history-board')[0];
     let b = document.getElementsByClassName('created-board')[0];
     let c = document.getElementsByClassName('cooked-board')[0];
-    console.log(a);
-    console.log(b);
-    console.log(c);
-
+  
     if (board ==="history") {
       console.log(board);
       a.classList.add('show');
@@ -51,10 +52,12 @@ class App extends Component {
   }
 
   state = {
-    Orders: []
+    Orders: [],
+    OrdersCr: [],
+    OrdersCo: []
   };
   render() {
-    const { Orders } = this.state;
+    const { Orders, OrdersCr, OrdersCo } = this.state;
     return (
       <div className="App">
         <Stream/>
@@ -65,14 +68,14 @@ class App extends Component {
               </button>
             </div>
             <div>
-              <button className="created" href="#" onClick={() => { this.showBoard("created")}}>
+              {/* <button className="created" href="#" onClick={() => { this.showBoard("created")}}>
                 filter By Cooking
               </button>
             </div>
             <div>
               <button className="cooked" href="#" onClick={() => { this.showBoard("cooked")}}>
                 filter By Cooked
-              </button>
+              </button> */}
             </div>
           </div>
         <div className="history-board">
@@ -84,13 +87,13 @@ class App extends Component {
         <div className="created-board hidden">
           <Board 
           Filter = {'Created-history'}
-          Orders = {Orders}
+          Orders = {OrdersCr}
           />
         </div>
         <div className="cooked-board hidden">
           <Board 
             Filter = {'Cooked-history'}
-            Orders = {Orders}
+            Orders = {OrdersCo}
           />
         </div>
       </div>  

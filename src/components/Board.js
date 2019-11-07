@@ -7,8 +7,8 @@ class Board extends Component {
 
     constructor(props){
       super(props);
-      //this.renderTableRows= this.renderTableRows.bind(this);
-      // this.filterBy = this.filterBy.bind(this);
+      this.renderTableRows= this.renderTableRows.bind(this);
+      this.filterBy = this.filterBy.bind(this);
     }
 
     filterBy(event,order){
@@ -36,21 +36,20 @@ class Board extends Component {
 
     renderTableRows(){
       let order = this.props.Orders;
-      console.log(this.props);
+      // console.log(this.props);
       if (this.props.Filter !== "history" ) {
         this.filterBy(order,this.props.Filter);
       } else {
         //massage data
-          // if (order.length > 2 ) {
-          //   let element  = order[order.length-1];
-          //   for(var i = 0; i < order.length; i++) {
-          //       if (order[i].id === element.id) {
-          //           // order[i]=element;
+          if (order.length > 2 ) {
+            let element  = order[order.length-1];
+            for(var i = 0; i < order.length; i++) {
+                if (order[i].id === element.id) {
+                    order[i]=element;
                     
-          //       }
-          //   }
-            
-      
+                }
+            }
+          }
           return order.map(order => (
             <Card
               // key = {order.id}
@@ -91,7 +90,7 @@ class Board extends Component {
                 </div>
               </div>
               <div id='resp-table-body'>
-                { this.renderTableRows(this.props.className)}
+                { this.renderTableRows(this.props)}
               </div>
             </div>
           </div>
